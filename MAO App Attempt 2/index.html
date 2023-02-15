@@ -2,50 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>MAO App</title>
 </head>
 <body>
-    <h1>MAO Caculator</h1>
+    <div class="container">
+        <h1>MAO Caculator</h1>
 
-    <div>
-        <h3>Enter Fair Market Value:</h3>
-        <input type="text" id="fairmarketvalue">
+        <div>
+            <h3>Enter Fair Market Value:</h3>
+            <input type="text" id="fairmarketvalue">
+        </div>
+
+        <br>
+
+        <div>
+            <h3>Enter SQFT: </h3>
+            <input type="text" id="sqft">
+        </div>
+
+        <br>
+
+        <div>
+            <h3>Type Of Rehab:</h3>
+            <input onchange="setRehabType()" type="radio" name="rehabType" value="fullRehab"><label>Full-Rehab</label></input>
+            <input onchange="setRehabType()" type="radio" name="rehabType" value="pullReplace"><label>Pull & Replace</label></input>
+            <input onchange="setRehabType()" type="radio" name="rehabType" value="faceLift"><label>Face Life</label></input>
+        </div>
+
+        <br> 
+
+        <div>
+            <h3>Desired Net Profit: </h3>
+            <input type="text" id="desiredProfit">
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <button class="submit-btn" type="submit" onclick="setFMV(); setSQFT(); setProfit(); calcRehab(); calcMAO()" >Submit</button>
+            <h3 id="MAO"></h3>
+        </div>
     </div>
-
-    <br>
-
-    <div>
-        <h3>Enter SQFT: </h3>
-        <input type="text" id="sqft">
-    </div>
-
-    <br>
-
-    <div>
-        <h3>Type Of Rehab:</h3>
-        <input onchange="setRehabType()" type="radio" name="rehabType" value="fullRehab">Full-Rehab</input>
-        <input onchange="setRehabType()" type="radio" name="rehabType" value="pullReplace">Pull & Replace</input>
-        <input onchange="setRehabType()" type="radio" name="rehabType" value="faceLift">Face Life</input>
-    </div>
-
-    <br> 
-
-    <div>
-        <h3>Desired Net Profit: </h3>
-        <input type="text" id="desiredProfit">
-    </div>
-
-    <br>
-    <br>
-
-    <div>
-        <button class="submit-btn" type="submit" onclick="setFMV(); setSQFT(); setProfit(); calcRehab(); calcMAO()" >Submit</button>
-        <h3 id="MAO"></h3>
-    </div>
-
 
     <script src="app.js"></script>
 </body>
